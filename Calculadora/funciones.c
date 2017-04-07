@@ -150,7 +150,7 @@ float todosCalculos(float nro1, float nro2)
     division = nro1 / nro2;
     if(nro2 == 0)
     {
-        printf("Division: sin calcular, el segundo operando debe ser mayor a cero\n\n");
+        printf("Division: sin calcular, el segundo operando debe ser mayor a cero.\n\n");
     }
 
     if(nro2 > 0)
@@ -167,7 +167,11 @@ float todosCalculos(float nro1, float nro2)
     {
         acumulador *= i;
     }
-    printf("Factorial (A!): %.0f\n\n", acumulador);
+
+    if(nro1 == 0)
+        printf("Factorial (A!): Sin calcular, el primer operando debe ser mayor a cero.\n\n");
+    else
+        printf("Factorial (A!): %.0f\n\n", acumulador);
 
     return 0;
 }
