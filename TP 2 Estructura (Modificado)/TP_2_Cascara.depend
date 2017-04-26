@@ -1,0 +1,108 @@
+# depslib dependency file v1.0
+1474574019 source:c:\users\it\desktop\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1474497524 c:\users\it\desktop\tp_2_cascara\funciones.h
+
+1474574019 source:c:\users\it\desktop\tp_2_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1474420698 source:f:\tp_2_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1474417878 source:f:\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1474419994 f:\tp_2_cascara\funciones.h
+
+1474497208 source:j:\tp_2_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1474497524 j:\tp_2_cascara\funciones.h
+
+1474499578 source:j:\tp_2_cascara\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1491356791 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp2 estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1474497524 d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp2 estructura\funciones.h
+
+1491358603 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp2 estructura\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1491684814 source:c:\users\fede\desktop\tp2 estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1491684874 c:\users\fede\desktop\tp2 estructura\funciones.h
+
+1491687686 source:c:\users\fede\desktop\tp2 estructura\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1491766182 source:c:\users\fede\desktop\tp 2 estructura\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1491697980 source:c:\users\fede\desktop\tp 2 estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1491684874 c:\users\fede\desktop\tp 2 estructura\funciones.h
+
+1491763797 source:c:\users\fede\desktop\tp 2 estructura\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1491763797 c:\users\fede\desktop\tp 2 estructura\validaciones.h
+
+1493171285 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura (modificado)\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1493171276 d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura (modificado)\funciones.h
+
+1491763797 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura (modificado)\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1493171276 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura (modificado)\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1493171315 d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura (modificado)\validaciones.h
+
