@@ -27,7 +27,7 @@ int menu(float valor1, float valor2)
         printf("\n\nIngrese opcion: ");
         scanf("%d", &opcion);
 
-        }while(opcion < 1 || opcion > 9);
+        }while(opcion < 1 && opcion > 10);
 
     return opcion;
 }
@@ -39,8 +39,10 @@ int menu(float valor1, float valor2)
 float ingresoNumero(void)
 {
     float operando;
+
     printf("\nIngrese un numero: ");
     scanf("%f", &operando);
+
     return operando;
 }
 
@@ -53,7 +55,11 @@ float ingresoNumero(void)
 float suma(float nro1, float nro2)
 {
     float suma;
+
     suma = nro1 + nro2;
+    printf("\nResultado Suma: %.2f\n\n", suma);
+    system("pause");
+
     return suma;
 }
 
@@ -66,7 +72,11 @@ float suma(float nro1, float nro2)
 float resta(float nro1, float nro2)
 {
     float resta;
+
     resta = nro1 - nro2;
+    printf("\nResultado Resta: %.2f\n\n", resta);
+    system("pause");
+
     return resta;
 }
 
@@ -86,7 +96,11 @@ float division(float nro1, float nro2)
     }
 
     float division;
+
     division = nro1 / nro2;
+    printf("\nResultado Division: %.2f\n\n", division);
+    system("pause");
+
     return division;
 }
 
@@ -99,7 +113,11 @@ float division(float nro1, float nro2)
 float multiplicacion(float nro1, float nro2)
 {
     float multiplicacion;
+
     multiplicacion = nro1 * nro2;
+    printf("\nResultado Multiplicacion: %.2f\n\n", multiplicacion);
+    system("pause");
+
     return multiplicacion;
 }
 
@@ -123,6 +141,9 @@ float factorial(float nro1)
     {
         acumulador *= i;
     }
+
+    printf("\nResultado Factorial: %.2f\n\n", acumulador);
+    system("pause");
 
     return acumulador;
 }
@@ -171,7 +192,9 @@ float todosCalculos(float nro1, float nro2)
     if(nro1 == 0)
         printf("Factorial (A!): Sin calcular, el primer operando debe ser mayor a cero.\n\n");
     else
-        printf("Factorial (A!): %.0f\n\n", acumulador);
+        printf("Factorial (A!): %.2f\n\n", acumulador);
+
+    system("pause");
 
     return 0;
 }
