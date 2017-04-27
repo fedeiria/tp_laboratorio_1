@@ -1,7 +1,7 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
 
-#define LONGITUD_CADENA 50
+#define LONGITUD_CADENA 51
 
 typedef struct{
 

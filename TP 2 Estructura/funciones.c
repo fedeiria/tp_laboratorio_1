@@ -4,7 +4,7 @@
 #include "validaciones.h"
 
 #define CANTIDAD_ELEMENTOS 20
-#define LONGITUD_CADENA 50
+#define LONGITUD_CADENA 51
 
 
 typedef struct{
@@ -53,8 +53,8 @@ void inicializarArrayEstado(EPersona persona[], int cantidadElementos, int valor
 
     for(i = 0; i < cantidadElementos; i++)
     {
-        persona[i].edad = valor;
         persona[i].estado = valor;
+        persona[i].edad = valor;        // Inicializo edad en cero (0) para el grafico
     }
 }
 
@@ -68,13 +68,14 @@ void inicializarArrayEstado(EPersona persona[], int cantidadElementos, int valor
 int buscarEspacioLibre(EPersona persona[], int cantidadElementos, int valor)
 {
     int i;
+    int returnAux = -1;
 
     for(i = 0; i < cantidadElementos; i++)
     {
         if(persona[i].estado == valor)
-            return i;
+            returnAux = i;
     }
-    return -1;
+    return returnAux;
 }
 
 /**
@@ -87,13 +88,14 @@ int buscarEspacioLibre(EPersona persona[], int cantidadElementos, int valor)
 int buscarPorDni(EPersona persona[], int cantidadElementos, long int valor)
 {
     int i;
+    int returnAux = -1;
 
     for(i = 0; i < cantidadElementos; i++)
     {
         if(persona[i].dni == valor)
-            return i;
+            returnAux = i;
     }
-    return -1;
+    return returnAux;
 }
 
 /**
@@ -179,7 +181,7 @@ void graficoDeBarras(int hasta18, int de19a35, int mayorDe35)
  */
 void altaPersona(EPersona persona[])
 {
-    char auxNombre[41];
+    char auxNombre[LONGITUD_CADENA];
     int lugarLibre;
     int auxEdad;
     long int auxDni;
@@ -197,7 +199,7 @@ void altaPersona(EPersona persona[])
     {
         system("cls");
         printf("\n********** AGREGAR PERSONA **********\n\n");
-        getValidString("Ingrese nombre: ", "\nERROR!, el nombre debe estar compuesto por letras.\n\n", "\nERROR!, Solo se permite un minimo de 3 caracteres y un maximo de 40 caracteres.\n\n", auxNombre, 2, 41, 100);
+        getValidString("Ingrese nombre: ", "\nERROR!, el nombre debe estar compuesto por letras.\n\n", "\nERROR!, Solo se permite un minimo de 3 caracteres y un maximo de 50 caracteres.\n\n", auxNombre, 2, 51, 100);
         fflush(stdin);
         strcpy(persona[lugarLibre].nombre, auxNombre);
         getValidInt("Ingrese edad: ", "\nERROR!, la edad debe ser numerica.\n\n", "\nERROR!, la edad debe ser mayor a cero (0) y menor a sesenta y seis (66).\n\n", &auxEdad, 1, 65, 100);
