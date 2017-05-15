@@ -6,7 +6,7 @@
  * \param char str String to be analyzed
  * \return 1 If value is composed only by letters - 0 If does not contain it
  */
-int onlywords(char str[]);
+int onlyWords(char str[]);
 
 /**
  * \brief Verifies whether the received value is composed only by letters and numbers (No special characters)

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #define MAX_LENGTH 1024
 
 /**
@@ -9,17 +8,18 @@
  * \param char str String to be analyzed
  * \return 1 If value is composed only by letters - 0 If does not contain it
  */
-int onlywords(char str[])
+int onlyWords(char str[])
 {
     int i = 0;
+    int returnAux = 1;
 
     while(str[i] != '\0')
     {
         if((str[i] != ' ') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
-            return 0;
+            returnAux = 0;
         i++;
     }
-    return 1;
+    return returnAux;
 }
 
 /**
@@ -29,20 +29,23 @@ int onlywords(char str[])
  */
 int onlyAlphanumeric(char str[])
 {
-   int i = 0;
-   int count = 0;
+    int i = 0;
+    int count = 0;
+    int returnAux = 1;
 
-   while(str[i] != '\0')
-   {
-       if((str[i] != ' ') && (str[i] != '.') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
-           return 0;
-       i++;
-       if(str[i] == '.')
-           count++;
+    while(str[i] != '\0')
+    {
+        if((str[i] != ' ') && (str[i] != '.') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && (str[i] < '0' || str[i] > '9'))
+            returnAux = 0;
+        i++;
+
+        if(str[i] == '.')
+            count++;
+
         if(count > 1)
-            return 0;
-   }
-   return 1;
+            returnAux = 0;
+    }
+    return returnAux;
 }
 
 /**
@@ -53,14 +56,15 @@ int onlyAlphanumeric(char str[])
 int onlyNumbers(char str[])
 {
     int i = 0;
+    int returnAux = 1;
 
     while(str[i] != '\0')
     {
         if(str[i] < '0' || str[i] > '9')
-            return 0;
+            returnAux = 0;
         i++;
     }
-    return 1;
+    return returnAux;
 }
 
 /**
@@ -70,21 +74,23 @@ int onlyNumbers(char str[])
  */
 int onlyFloatingNumbers(char str[])
 {
-    int count = 0;
     int i = 0;
+    int count = 0;
+    int returnAux = 1;
 
     while(str[i] != '\0')
     {
         if((str[i] < '0' || str[i] > '9') && (str[i] != '.'))
-            return 0;
+            returnAux = 0;
         i++;
 
         if(str[i] == '.')
             count++;
+
         if(count > 1)
-            return 0;
+            returnAux = 0;
     }
-    return 1;
+    return returnAux;
 }
 
 /**
@@ -109,13 +115,16 @@ void getString(char message[], char input[])
 int getStringWords(char message[], char input[])
 {
     char aux[MAX_LENGTH];
+    int returnAux = 0;
+
     getString(message, aux);
-    if(onlywords(aux))
+
+    if(onlyWords(aux))
     {
         strcpy(input, aux);
-        return 1;
+        returnAux = 1;
     }
-    return 0;
+    return returnAux;
 }
 
 /**
@@ -127,13 +136,16 @@ int getStringWords(char message[], char input[])
 int getStringAlphanumeric(char message[], char input[])
 {
     char aux[MAX_LENGTH];
+    int returnAux = 0;
+
     getString(message, aux);
+
     if(onlyAlphanumeric(aux))
     {
         strcpy(input, aux);
-        return 1;
+        returnAux = 1;
     }
-    return 0;
+    return returnAux;
 }
 
 /**
@@ -145,13 +157,16 @@ int getStringAlphanumeric(char message[], char input[])
 int getStringNumbers(char message[], char input[])
 {
     char aux[MAX_LENGTH];
+    int returnAux = 0;
+
     getString(message, aux);
+
     if(onlyNumbers(aux))
     {
         strcpy(input, aux);
-        return 1;
+        returnAux = 1;
     }
-    return 0;
+    return returnAux;
 }
 
 /**
@@ -163,13 +178,16 @@ int getStringNumbers(char message[], char input[])
 int getStringFloatingNumbers(char message[], char input[])
 {
     char aux[MAX_LENGTH];
+    int returnAux = 0;
+
     getString(message, aux);
+
     if(onlyFloatingNumbers(aux))
     {
         strcpy(input, aux);
-        return 1;
+        returnAux = 1;
     }
-    return 0;
+    return returnAux;
 }
 
 /**
@@ -276,7 +294,7 @@ int getValidInt(char requestMessage[], char errorMessage[], char errorMessageLen
             continue;
         }
         *input = auxInt;
-        returnAux = 1;
+        returnAux = 0;
         break;
     }
     return returnAux;
@@ -314,7 +332,7 @@ int getValidLongInt(char requestMessage[], char errorMessage[], char errorMessag
             continue;
         }
         *input = auxLongInt;
-        returnAux = 1;
+        returnAux = 0;
         break;
     }
     return returnAux;
@@ -353,7 +371,7 @@ int getValidFloat(char requestMessage[], char errorMessage[], char errorMessageL
             continue;
         }
         *input = auxFloat;
-        returnAux = 1;
+        returnAux = 0;
         break;
     }
     return returnAux;

@@ -3,8 +3,6 @@
 #include <string.h>
 #include "funciones.h"
 
-#define CANTIDAD_ELEMENTOS 20
-
 int main()
 {
     char salir = 'n';

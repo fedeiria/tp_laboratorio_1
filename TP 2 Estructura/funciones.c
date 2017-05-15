@@ -1,20 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "funciones.h"
 #include "validaciones.h"
-
-#define CANTIDAD_ELEMENTOS 20
-#define LONGITUD_CADENA 51
-
-
-typedef struct{
-
-    char nombre[LONGITUD_CADENA];
-    int edad;
-    int estado;
-    long int dni;
-
-}EPersona;
 
 /**
  * \brief Muestra un menu con opciones
@@ -73,7 +61,10 @@ int buscarEspacioLibre(EPersona persona[], int cantidadElementos, int valor)
     for(i = 0; i < cantidadElementos; i++)
     {
         if(persona[i].estado == valor)
+        {
             returnAux = i;
+            break;
+        }
     }
     return returnAux;
 }
@@ -93,7 +84,10 @@ int buscarPorDni(EPersona persona[], int cantidadElementos, long int valor)
     for(i = 0; i < cantidadElementos; i++)
     {
         if(persona[i].dni == valor)
+        {
             returnAux = i;
+            break;
+        }
     }
     return returnAux;
 }
@@ -138,8 +132,10 @@ void graficoDeBarras(int hasta18, int de19a35, int mayorDe35)
 
     if(hasta18 >= de19a35 && hasta18 >= mayorDe35)
         mayor = hasta18;
+
     else if(de19a35 >= hasta18 && de19a35 >= mayorDe35)
         mayor = de19a35;
+
     else
         mayor = mayorDe35;
 
@@ -149,28 +145,30 @@ void graficoDeBarras(int hasta18, int de19a35, int mayorDe35)
 
     for(i = mayor; i > 0; i--)
     {
-        printf("%02d|",i);
+        printf("%02d|", i);
 
-        if(i <= hasta18)
+        if(i > 0 && i <= hasta18)
             printf("*");
 
-        if(i <= de19a35)
+        if(i > 0 && i <= de19a35)
         {
             flag = 1;
             printf("\t*");
         }
-        if(i <= mayorDe35)
+        if(i > 0 && i <= mayorDe35)
         {
             if(flag == 0)
                 printf("\t\t*");
+
             if(flag == 1)
                 printf("\t*");
         }
+
         printf("\n");
     }
     printf("--+-----------------");
-    printf("\n  |<18\t19-35\t>35");
-    printf("\n   %d\t%d\t%d\n\n", hasta18, de19a35, mayorDe35);
+    printf("\n  |<18\t 19-35\t>35");
+    printf("\n   %d\t %d\t%d\n\n", hasta18, de19a35, mayorDe35);
     system("pause");
 }
 
@@ -208,7 +206,7 @@ void altaPersona(EPersona persona[])
 
         if(buscarPorDni(persona, CANTIDAD_ELEMENTOS, auxDni) != -1)
         {
-            printf("El DNI ya existe.\n\n");
+            printf("\nEl DNI: %ld ya existe.\n\n", auxDni);
             getValidLongInt("Ingrese DNI (sin puntos): ", "\nERROR!, el DNI debe contener solo numeros.\n\n", "\nERROR de longitud del DNI, debe contener entre 7 y 8 numeros.\n\n", &auxDni, 1000000, 99000000, 100);
             persona[lugarLibre].dni = auxDni;
             persona[lugarLibre].estado = 1;
@@ -323,11 +321,13 @@ void imprimirGrafico(EPersona persona[])
 
     for(i = 0; i < CANTIDAD_ELEMENTOS; i++)
     {
-        if(persona[i].edad < 19)
+        if(persona[i].edad > 0 && persona[i].edad <= 18)
             cantHasta18++;
+
         else if(persona[i].edad >= 19 && persona[i].edad <= 35)
             cantDe19a35++;
-        else
+
+        else if(persona[i].edad > 0 && persona[i].edad > 35)
             cantMayor35++;
     }
 
