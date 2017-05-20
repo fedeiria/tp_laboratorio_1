@@ -127,7 +127,7 @@
 
 1493171315 c:\users\fede\documents\github\tp_laboratorio_1\tp 2 estructura\validaciones.h
 
-1494807574 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura(modificado)\funciones.c
+1495255529 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura(modificado)\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -136,13 +136,12 @@
 
 1494700808 d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura(modificado)\validaciones.h
 
-1494702760 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura(modificado)\main.c
+1495252407 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura(modificado)\main.c
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
 	"funciones.h"
 
-1494702587 d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura(modificado)\funciones.h
+1495255134 d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura(modificado)\funciones.h
 
 1494702760 source:d:\teoria de trabajo\utn\tps\tp_laboratorio_1\tp 2 estructura(modificado)\validaciones.c
 	<stdio.h>

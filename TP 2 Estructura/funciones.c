@@ -47,11 +47,31 @@ void inicializarArrayEstado(EPersona persona[], int cantidadElementos, int valor
 }
 
 /**
+ * \brief Realiza una verificacion en el campo estado y devuelve un valor
+ * \param EPersona persona Es el array en el cual se trabaja
+ * \param cantidadElementos Indica la longitud del array
+ * \param valor Dato que se utiliza para realizar la verificacion
+ * \return flag 1 si el campo estado contiene un valor distinto de cero (0), 0 si no hay cambios
+ */
+int indicadorEstado(EPersona persona[], int cantidadElementos, int valor)
+{
+    int i;
+    int flag = 0;
+
+    for(i = 0; i < cantidadElementos; i++)
+    {
+        if(persona[i].estado == valor)
+            flag = 1;
+    }
+    return flag;
+}
+
+/**
  * \brief Busca un espacio libre en un array persona para permitir el ingreso de datos
  * \param Epersona persona Es el array en el cual se busca
  * \param cantidadElementos indica la longitud del array
  * \param valor El valor a buscar en los elementos del array
- * \return i Si encuentra un lugar libre, -1 si no lo encuentra
+ * \return returnAux i Si encuentra un lugar libre, returnAux -1 si no lo encuentra
  */
 int buscarEspacioLibre(EPersona persona[], int cantidadElementos, int valor)
 {
@@ -74,7 +94,7 @@ int buscarEspacioLibre(EPersona persona[], int cantidadElementos, int valor)
  * \param Epersona persona Es el array en el cual se busca
  * \param cantidadElementos Indica la longitud del array
  * \param valor Es el valor a buscar en los elementos del array
- * \return i El indice donde se encuentra el elemento que coincide con el valor pasado por parametro, -1 si no lo encuentra
+ * \return returnAux i El indice donde se encuentra el elemento que coincide con el valor pasado por parametro, returnAux -1 si no lo encuentra
  */
 int buscarPorDni(EPersona persona[], int cantidadElementos, long int valor)
 {
@@ -177,11 +197,12 @@ void graficoDeBarras(int hasta18, int de19a35, int mayorDe35)
  * \param Epersona persona Array en el cual se ingresan los datos
  * \return void
  */
-void altaPersona(EPersona persona[])
+void agregarPersona(EPersona persona[])
 {
     char auxNombre[LONGITUD_CADENA];
-    int lugarLibre;
+    int flag;
     int auxEdad;
+    int lugarLibre;
     long int auxDni;
 
     lugarLibre = buscarEspacioLibre(persona, CANTIDAD_ELEMENTOS, 0);
@@ -190,8 +211,7 @@ void altaPersona(EPersona persona[])
     {
         system("cls");
         printf("\n********** AGREGAR PERSONA **********\n\n");
-        printf("No hay lugares libres.\n\n");
-        system("pause");
+        printf("No hay lugares libres.\n");
     }
     else
     {
@@ -202,24 +222,23 @@ void altaPersona(EPersona persona[])
         strcpy(persona[lugarLibre].nombre, auxNombre);
         getValidInt("Ingrese edad: ", "\nERROR!, la edad debe ser numerica.\n\n", "\nERROR!, la edad debe ser mayor a cero (0) y menor a sesenta y seis (66).\n\n", &auxEdad, 1, 65, 100);
         persona[lugarLibre].edad = auxEdad;
-        getValidLongInt("Ingrese DNI (sin puntos): ", "\nERROR!, el DNI debe contener solo numeros.\n\n", "\nERROR de longitud del DNI, debe contener entre 7 y 8 numeros.\n\n", &auxDni, 1000000, 99000000, 100);
 
-        if(buscarPorDni(persona, CANTIDAD_ELEMENTOS, auxDni) != -1)
-        {
-            printf("\nEl DNI: %ld ya existe.\n\n", auxDni);
+        do{
+            flag = 0;
             getValidLongInt("Ingrese DNI (sin puntos): ", "\nERROR!, el DNI debe contener solo numeros.\n\n", "\nERROR de longitud del DNI, debe contener entre 7 y 8 numeros.\n\n", &auxDni, 1000000, 99000000, 100);
-            persona[lugarLibre].dni = auxDni;
-            persona[lugarLibre].estado = 1;
-        }
-        else
-        {
-            persona[lugarLibre].dni = auxDni;
-            persona[lugarLibre].estado = 1;
-        }
+            if(buscarPorDni(persona, CANTIDAD_ELEMENTOS, auxDni) != -1)
+            {
+                printf("\nEl DNI: %ld ya existe.\n\n", auxDni);
+                flag = 1;
+            }
+        }while(flag == 1);
 
-        printf("\n");
-        system("pause");
+        persona[lugarLibre].dni = auxDni;
+        persona[lugarLibre].estado = 1;
     }
+
+    printf("\n");
+    system("pause");
 }
 
 /**
@@ -229,16 +248,24 @@ void altaPersona(EPersona persona[])
  */
 void borrarPersona(EPersona persona[])
 {
+    int estado;
     int respuesta;
     int busquedaDni;
     int confirmacion;
     long int auxDni;
 
     system("cls");
-
     printf("\n********** BORRAR PERSONA **********\n\n");
 
     do{
+        estado = indicadorEstado(persona, CANTIDAD_ELEMENTOS, 1);
+
+        if(estado != 1)
+        {
+            printf("No hay registros cargados.\n\n");
+            break;
+        }
+
         getValidLongInt("Ingrese DNI a dar de baja (sin puntos): ", "\nERROR!, el DNI debe contener solo numeros.\n\n", "\nERROR de longitud del DNI, debe contener entre 7 y 8 numeros.\n\n", &auxDni, 1000000, 99000000, 100);
 
         busquedaDni = buscarPorDni(persona, CANTIDAD_ELEMENTOS, auxDni);
@@ -261,7 +288,7 @@ void borrarPersona(EPersona persona[])
             }
             else
             {
-                printf("\nNo se elimino el registro.\n\n");
+                printf("\nAccion cancelada.\n\n");
                 system("pause");
             }
         }
@@ -284,12 +311,19 @@ void borrarPersona(EPersona persona[])
 void imprimirLista(EPersona persona[])
 {
     int i;
-    int flag = 0;
+    int estado;
 
     ordenarRegistro(persona, CANTIDAD_ELEMENTOS);
+    estado = indicadorEstado(persona, CANTIDAD_ELEMENTOS, 1);
 
     system("cls");
     printf("\n********** LISTA DE REGISTROS **********\n");
+
+    if(estado != 1)
+    {
+        printf("\nNo hay registros cargados. Nada para mostrar.\n\n");
+        system("pause");
+    }
 
     for(i = 0; i < CANTIDAD_ELEMENTOS; i++)
     {
@@ -297,13 +331,7 @@ void imprimirLista(EPersona persona[])
         {
             printf("\nNombre: %s\nEdad: %d\nDNI: %ld\n", persona[i].nombre, persona[i].edad, persona[i].dni);
             system("pause");
-            flag = 1;
         }
-    }
-    if(flag == 0)
-    {
-        printf("\nNo hay registros cargados.\n\n");
-        system("pause");
     }
 }
 
@@ -315,21 +343,35 @@ void imprimirLista(EPersona persona[])
 void imprimirGrafico(EPersona persona[])
 {
     int i;
+    int estado;
     int cantHasta18 = 0;
     int cantDe19a35 = 0;
     int cantMayor35 = 0;
 
-    for(i = 0; i < CANTIDAD_ELEMENTOS; i++)
+    estado = indicadorEstado(persona, CANTIDAD_ELEMENTOS, 1);
+
+    system("cls");
+    printf("\n********** GRAFICO DE EDADES **********\n");
+
+    if(estado != 1)
     {
-        if(persona[i].edad > 0 && persona[i].edad <= 18)
-            cantHasta18++;
-
-        else if(persona[i].edad >= 19 && persona[i].edad <= 35)
-            cantDe19a35++;
-
-        else if(persona[i].edad > 0 && persona[i].edad > 35)
-            cantMayor35++;
+        printf("\nNo hay registros cargados. Nada para mostrar.\n\n");
+        system("pause");
     }
+    else
+    {
+        for(i = 0; i < CANTIDAD_ELEMENTOS; i++)
+        {
+            if(persona[i].edad > 0 && persona[i].edad <= 18)
+                cantHasta18++;
 
-    graficoDeBarras(cantHasta18, cantDe19a35, cantMayor35);
+            else if(persona[i].edad >= 19 && persona[i].edad <= 35)
+                cantDe19a35++;
+
+            else if(persona[i].edad > 0 && persona[i].edad > 35)
+                cantMayor35++;
+        }
+
+        graficoDeBarras(cantHasta18, cantDe19a35, cantMayor35);
+    }
 }

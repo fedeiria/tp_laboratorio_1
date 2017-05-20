@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "funciones.h"
 
-int main()
+int main(void)
 {
     char salir = 'n';
     int opcion = 0;
@@ -19,7 +18,7 @@ int main()
         switch(opcion)
         {
             case 1:
-                altaPersona(persona);
+                agregarPersona(persona);
                 break;
             case 2:
                 borrarPersona(persona);
