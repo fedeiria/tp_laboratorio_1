@@ -1,0 +1,61 @@
+# depslib dependency file v1.0
+1496082396 source:c:\users\fede\desktop\nueva carpeta\tp_3_archivos\funciones.c
+	"funciones.h"
+	"validaciones.h"
+
+1496080993 c:\users\fede\desktop\nueva carpeta\tp_3_archivos\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1496076729 c:\users\fede\desktop\nueva carpeta\tp_3_archivos\validaciones.h
+
+1496080993 source:c:\users\fede\desktop\nueva carpeta\tp_3_archivos\main.c
+	"funciones.h"
+	"validaciones.h"
+
+1496076729 source:c:\users\fede\desktop\nueva carpeta\tp_3_archivos\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1496101938 source:f:\tp_3_archivos\funciones.c
+	"funciones.h"
+	"validaciones.h"
+
+1496100992 f:\tp_3_archivos\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+
+1496076730 f:\tp_3_archivos\validaciones.h
+
+1496076730 source:f:\tp_3_archivos\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1496100992 source:f:\tp_3_archivos\main.c
+	"funciones.h"
+
+1496076730 source:c:\users\fede\desktop\tp_3_archivos\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1496441512 source:c:\users\fede\desktop\tp_3_archivos\funciones.c
+	"funciones.h"
+	"validaciones.h"
+
+1496441571 c:\users\fede\desktop\tp_3_archivos\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1496076730 c:\users\fede\desktop\tp_3_archivos\validaciones.h
+
+1496180671 source:c:\users\fede\desktop\tp_3_archivos\main.c
+	"funciones.h"
+
