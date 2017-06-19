@@ -280,7 +280,7 @@ void product_loadFile(ArrayList *pArrayList, Product *pProduct)
 	if(file == NULL)
 	{
 	    file = fopen(PRODUCT_DATA, "wb");
-	    if(file == NULL)
+        if(file == NULL)
         {
             printf("ERROR!, no se pudo abrir el archivo: %s.\n", PRODUCT_DATA);
             exit(0);
@@ -340,27 +340,13 @@ void product_saveFile(ArrayList *pArrayList, Product *pProduct)
 
             printf("\nCambios guardados con exito.\n\n");
             system("pause");
-            product_exitProduct();
         }
     }
     else
     {
         printf("\nCambios sin guardar.\n\n");
         system("pause");
-        product_exitProduct();
     }
 
     fclose(file);
-}
-
-/**
- * \brief Option displayed when closing the program
- * \param -
- * \return void
- */
-void product_exitProduct(void)
-{
-    printf("\n***********************************\n");
-    printf("**********  SOFTPRO v1.0  *********\n");
-    printf("***********************************\n");
 }
