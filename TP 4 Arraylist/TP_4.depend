@@ -1,0 +1,166 @@
+# depslib dependency file v1.0
+1480267170 source:c:\users\bren\desktop\tp_4\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1480270453 c:\users\bren\desktop\tp_4\arraylist.h
+
+1480217895 source:c:\users\bren\desktop\tp_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Product.h"
+	"utn.h"
+
+1480264430 source:c:\users\bren\desktop\tp_4\product.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Product.h"
+	"utn.h"
+
+1479866610 c:\users\bren\desktop\tp_4\product.h
+
+1480269540 source:c:\users\bren\desktop\tp_4\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1480268804 c:\users\bren\desktop\tp_4\utn.h
+
+1480267172 source:g:\tp_4\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1480270454 g:\tp_4\arraylist.h
+
+1480365592 source:g:\tp_4\product.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Product.h"
+	"utn.h"
+
+1480365350 g:\tp_4\product.h
+
+1480359184 g:\tp_4\utn.h
+
+1480365444 source:g:\tp_4\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1480349750 source:g:\tp_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Product.h"
+	"main_product.h"
+	"utn.h"
+
+1480355144 g:\tp_4\main_product.h
+
+1480375590 source:g:\tp_4\main_product.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Product.h"
+	"utn.h"
+
+1480267172 source:c:\users\it\desktop\tp_4\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+
+1480270454 c:\users\it\desktop\tp_4\arraylist.h
+
+1480464806 source:c:\users\it\desktop\tp_4\main_product.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Product.h"
+	"utn.h"
+
+1480365350 c:\users\it\desktop\tp_4\product.h
+
+1480359184 c:\users\it\desktop\tp_4\utn.h
+
+1480463811 source:c:\users\it\desktop\tp_4\product.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Product.h"
+	"utn.h"
+
+1480365444 source:c:\users\it\desktop\tp_4\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1480459522 source:c:\users\it\desktop\tp_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Product.h"
+	"main_product.h"
+	"utn.h"
+
+1480459128 c:\users\it\desktop\tp_4\main_product.h
+
+1497831534 source:c:\users\fede\desktop\tp 4\tp_4\arraylist.c
+	"ArrayList.h"
+
+1497571338 c:\users\fede\desktop\tp 4\tp_4\arraylist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1497838212 source:c:\users\fede\desktop\tp 4\tp_4\main_product.c
+	"main_product.h"
+
+1497837934 c:\users\fede\desktop\tp 4\tp_4\product.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"ArrayList.h"
+
+1497583534 c:\users\fede\desktop\tp 4\tp_4\utn.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1497837934 source:c:\users\fede\desktop\tp 4\tp_4\product.c
+	"Product.h"
+
+1497583534 source:c:\users\fede\desktop\tp 4\tp_4\utn.c
+	"utn.h"
+
+1497838212 source:c:\users\fede\desktop\tp 4\tp_4\main.c
+	"Headers.h"
+
+1497673835 c:\users\fede\desktop\tp 4\tp_4\main_product.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Product.h"
+	"utn.h"
+
+1497673013 c:\users\fede\desktop\tp 4\tp_4\headers.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"main_product.h"
+	"ArrayList.h"
+	"Product.h"
+	"utn.h"
+
