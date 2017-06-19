@@ -233,9 +233,6 @@ int menu(void)
 
     do{
         system("cls");
-        printf("\n***********************************\n");
-        printf("**********  SOFTPRO v1.0  *********\n");
-        printf("***********************************\n\n");
         printf("********* MENU PRINCIPAL **********\n\n");
         printf("1 - AGREGAR PRODUCTO\n");
         printf("2 - MODIFICAR DATOS DEL PRODUCTO\n");

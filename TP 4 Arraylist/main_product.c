@@ -337,26 +337,12 @@ void product_saveFile(ArrayList *pArrayList, Product *pProduct)
         }
         printf("\nCambios guardados con exito.\n\n");
         system("pause");
-        product_exitProduct();
     }
     else if(option == 2)
     {
         printf("\nCambios sin guardar.\n\n");
         system("pause");
-        product_exitProduct();
     }
 
     fclose(file);
-}
-
-/**
- * \brief Option to close the program
- * \param -
- * \return void
- */
-void product_exitProduct(void)
-{
-    printf("\n***********************************\n");
-    printf("**********  SOFTPRO v1.0  *********\n");
-    printf("***********************************\n");
 }
