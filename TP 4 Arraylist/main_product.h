@@ -4,9 +4,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ArrayList.h"
-#include "Product.h"
 #include "utn.h"
+#include "Product.h"
+#include "ArrayList.h"
+
 #define PRODUCT_DATA "data.bin"
 
 /**
@@ -64,5 +65,12 @@ void product_loadFile(ArrayList *pArrayList, Product *pProduct);
  * \return void
  */
 void product_saveFile(ArrayList *pArrayList, Product *pProduct);
+
+/**
+ * \brief Option to close the program
+ * \param -
+ * \return void
+ */
+void product_exitProduct(void);
 
 #endif // __MAIN_PRODUCT

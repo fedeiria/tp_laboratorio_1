@@ -26,13 +26,22 @@ Product *product_new(void)
  * \param Product *this Pointer to structure Product
  * \return int value 0 If successfully, -1 Error
  */
-void product_setCode(Product *this)
+void product_setCode(ArrayList *pArrayList, Product *this)
 {
+    int flag;
     int auxCode;
 
     if(this != NULL)
     {
-        getValidInt("\nIngrese el codigo para el producto: ", "\nERROR! El codigo debe ser numerico.\n", "\nERROR! Limite excedido. Solo se permiten valores entre 1 y 5000.\n", &auxCode, 1, 5000, 5);
+        do{
+            flag = 0;
+            getValidInt("\nIngrese el codigo para el producto: ", "\nERROR! El codigo debe ser numerico.\n", "\nERROR!, Solo se permiten valores entre 1 y 5000.\n", &auxCode, 1, 5000, 5);
+
+            if(product_checkCode(pArrayList, this, auxCode))
+                flag = 1;
+
+        }while(flag == 1);
+
         this->code = auxCode;
     }
     else
@@ -41,6 +50,34 @@ void product_setCode(Product *this)
         system("pause");
         exit(0);
     }
+}
+
+/**
+ * \brief Verifies if the product code to add already exists in the list
+ * \param ArrayList *pArrayList Pointer to ArrayList
+ * \param Product *pProduct Pointer to Product
+ * \param int code Value to check
+ * \return int value Return - (1) if code already exists
+ *                          - (0) if Ok
+ */
+int product_checkCode(ArrayList *pArrayList, Product *pProduct, int code)
+{
+    int i;
+    int value = 0;
+
+    for(i = 0; i < al_len(pArrayList); i++)
+    {
+        pProduct = al_get(pArrayList, i);
+
+        if(pProduct->code == code)
+        {
+            printf("\nEl codigo ya existe.\n");
+            value = 1;
+            break;
+        }
+    }
+
+    return value;
 }
 
 /**
@@ -233,6 +270,9 @@ int menu(void)
 
     do{
         system("cls");
+        printf("\n***********************************\n");
+        printf("**********  SOFTPRO v1.0  *********\n");
+        printf("***********************************\n\n");
         printf("********* MENU PRINCIPAL **********\n\n");
         printf("1 - AGREGAR PRODUCTO\n");
         printf("2 - MODIFICAR DATOS DEL PRODUCTO\n");

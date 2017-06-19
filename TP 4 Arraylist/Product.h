@@ -29,7 +29,17 @@ Product *product_new(void);
  * \param Product *this Pointer to structure Product
  * \return int value 0 If successfully, -1 Error
  */
-void product_setCode(Product *this);
+void product_setCode(ArrayList *pArrayList, Product *this);
+
+/**
+ * \brief Verifies if the product code to add already exists in the list
+ * \param ArrayList *pArrayList Pointer to ArrayList
+ * \param Product *pProduct Pointer to Product
+ * \param int code Value to check
+ * \return int value Return - (1) if code already exists
+ *                          - (0) if Ok
+ */
+int product_checkCode(ArrayList *pArrayList, Product *pProduct, int code);
 
 /**
  * \brief Obtains the data of a field of the structure Product

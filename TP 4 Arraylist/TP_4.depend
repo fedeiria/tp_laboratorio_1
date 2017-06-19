@@ -123,10 +123,10 @@
 	<stdlib.h>
 	<string.h>
 
-1497838212 source:c:\users\fede\desktop\tp 4\tp_4\main_product.c
+1497906067 source:c:\users\fede\desktop\tp 4\tp_4\main_product.c
 	"main_product.h"
 
-1497837934 c:\users\fede\desktop\tp 4\tp_4\product.h
+1497906067 c:\users\fede\desktop\tp 4\tp_4\product.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -138,29 +138,29 @@
 	<stdlib.h>
 	<string.h>
 
-1497837934 source:c:\users\fede\desktop\tp 4\tp_4\product.c
+1497906099 source:c:\users\fede\desktop\tp 4\tp_4\product.c
 	"Product.h"
 
 1497583534 source:c:\users\fede\desktop\tp 4\tp_4\utn.c
 	"utn.h"
 
-1497838212 source:c:\users\fede\desktop\tp 4\tp_4\main.c
+1497902861 source:c:\users\fede\desktop\tp 4\tp_4\main.c
 	"Headers.h"
 
-1497673835 c:\users\fede\desktop\tp 4\tp_4\main_product.h
+1497906067 c:\users\fede\desktop\tp 4\tp_4\main_product.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"ArrayList.h"
-	"Product.h"
 	"utn.h"
+	"Product.h"
+	"ArrayList.h"
 
-1497673013 c:\users\fede\desktop\tp 4\tp_4\headers.h
+1497906194 c:\users\fede\desktop\tp 4\tp_4\headers.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"main_product.h"
-	"ArrayList.h"
-	"Product.h"
 	"utn.h"
+	"Product.h"
+	"ArrayList.h"
+	"main_product.h"
 

@@ -15,7 +15,7 @@ void product_addProduct(ArrayList *pArrayList, Product *pProduct)
         pProduct = product_new();
         product_setDescription(pProduct);
         product_setPrice(pProduct);
-        product_setCode(pProduct);
+        product_setCode(pArrayList, pProduct);
         al_add(pArrayList, pProduct);
         printf("\n");
         system("pause");
@@ -70,7 +70,7 @@ void product_modifyProduct(ArrayList *pArrayList, Product *pProduct)
                         al_set(pArrayList, i, pProduct);
                         product_setDescription(pProduct);
                         product_setPrice(pProduct);
-                        product_setCode(pProduct);
+                        product_setCode(pArrayList, pProduct);
                         printf("\nProducto modificado.\n\n");
                         system("pause");
                         break;
@@ -226,7 +226,7 @@ void product_orderProduct(ArrayList *pArrayList, Product *pProduct)
             printf("\n\n1 - DESCRIPCION");
             printf("\n2 - PRECIO");
             printf("\n3 - CODIGO\n");
-            getValidInt("\nIngrese opcion: ", "\nERROR! La opcion debe ser numerica.\n", "\nERROR! Por favor elija una opcion entre 1 y 3.\n", &option, 1, 3, 5);
+            getValidInt("\nIngrese opcion: ", "\nERROR! La opcion debe ser numerica.\n", "\nERROR! Por favor ingrese una opcion entre 1 y 3.\n", &option, 1, 3, 5);
             if(option == 1)
             {
                 al_sort(pArrayList, product_compareDescription, 1);
@@ -274,7 +274,7 @@ void product_loadFile(ArrayList *pArrayList, Product *pProduct)
     int i;
     int size;
     int length;
-	FILE* file;
+	FILE *file;
 
 	file = fopen(PRODUCT_DATA, "rb");
 	if(file == NULL)
@@ -328,21 +328,39 @@ void product_saveFile(ArrayList *pArrayList, Product *pProduct)
             printf("\nERROR!, no se pudo abrir el archivo: %s.\n\n", PRODUCT_DATA);
             exit(0);
         }
-        size = al_len(pArrayList);
-
-        for(i = 0; i < size; i++)
+        else
         {
-            pProduct = al_get(pArrayList, i);
-            fwrite(pProduct, sizeof(Product), 1, file);
+            size = al_len(pArrayList);
+
+            for(i = 0; i < size; i++)
+            {
+                pProduct = al_get(pArrayList, i);
+                fwrite(pProduct, sizeof(Product), 1, file);
+            }
+
+            printf("\nCambios guardados con exito.\n\n");
+            system("pause");
+            product_exitProduct();
         }
-        printf("\nCambios guardados con exito.\n\n");
-        system("pause");
     }
-    else if(option == 2)
+    else
     {
         printf("\nCambios sin guardar.\n\n");
         system("pause");
+        product_exitProduct();
     }
 
     fclose(file);
+}
+
+/**
+ * \brief Option displayed when closing the program
+ * \param -
+ * \return void
+ */
+void product_exitProduct(void)
+{
+    printf("\n***********************************\n");
+    printf("**********  SOFTPRO v1.0  *********\n");
+    printf("***********************************\n");
 }
