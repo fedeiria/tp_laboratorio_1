@@ -503,7 +503,6 @@ int resizeUp(ArrayList *this)
         {
             this->pElements = aux;
             this->reservedSize = (this->size + AL_INCREMENT);
-            this->size++;
         }
         value = 0;
     }
