@@ -32,6 +32,9 @@ int main()
             product_orderProduct(pArrayList, pProduct);
             break;
         case 6:
+            product_createFile(pArrayList, pProduct);
+            break;
+        case 7:
             product_saveFile(pArrayList, pProduct);
             seguir = 'n';
             break;

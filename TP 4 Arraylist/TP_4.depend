@@ -164,3 +164,52 @@
 	"ArrayList.h"
 	"main_product.h"
 
+1500520884 source:c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\main.c
+	"Headers.h"
+
+1497906194 c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\headers.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"Product.h"
+	"ArrayList.h"
+	"main_product.h"
+
+1497583534 c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\utn.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1500519524 c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\product.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"ArrayList.h"
+
+1497571338 c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\arraylist.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1500520884 c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\main_product.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"Product.h"
+	"ArrayList.h"
+
+1497583534 source:c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\utn.c
+	"utn.h"
+
+1500218250 source:c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\arraylist.c
+	"ArrayList.h"
+
+1500520884 source:c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\product.c
+	"Product.h"
+
+1500521015 source:c:\users\fede\documents\github\tp_laboratorio_1\tp 4 arraylist\main_product.c
+	"main_product.h"
+

@@ -1,0 +1,5 @@
+************ LISTA DE PRODUCTOS ************
+
+DESCRIPCION				PRECIO		CODIGO
+
+azucar ledesma 1k			19.99     	2

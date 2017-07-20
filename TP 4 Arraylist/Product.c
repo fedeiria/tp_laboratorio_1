@@ -10,7 +10,7 @@ Product *product_new(void)
 {
     Product *value = NULL;
 
-    value = malloc(sizeof(Product));
+    value = (Product*)malloc(sizeof(Product));
 
     if(value == NULL)
     {
@@ -228,10 +228,10 @@ int product_compareDescription(Product *productA, Product *productB)
 
     if(productA != NULL && productB != NULL)
     {
-        if(strcmp(((void*)productA->description), ((void*)productB->description)) > 0)
+        if(strcmp((void*)productA->description, (void*)productB->description) > 0)
             value = 1;
 
-        if(strcmp(((void*)productA->description), ((void*)productB->description)) < 0)
+        if(strcmp((void*)productA->description, (void*)productB->description) < 0)
             value = 0;
     }
 
@@ -276,9 +276,10 @@ int menu(void)
         printf("3 - ELIMINAR PRODUCTO\n");
         printf("4 - LISTAR PRODUCTOS\n");
         printf("5 - ORDENAR PRODUCTOS\n");
-        printf("6 - SALIR\n");
+        printf("6 - GENERAR ARCHIVO DE TEXTO\n");
+        printf("7 - SALIR\n");
 
-        getValidInt("\nIngrese opcion: ", "\nERROR! La opcion debe ser numerica.\n", "\nERROR! Seleccione una opcion entre 1 y 6.\n", &option, 1, 6, 5);
+        getValidInt("\nIngrese opcion: ", "\nERROR! La opcion debe ser numerica.\n", "\nERROR! Seleccione una opcion entre 1 y 7.\n", &option, 1, 7, 5);
 
     }while(!option);
 

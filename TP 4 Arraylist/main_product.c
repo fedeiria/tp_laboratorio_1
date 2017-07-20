@@ -291,11 +291,11 @@ void product_loadFile(ArrayList *pArrayList, Product *pProduct)
         fseek(file, 0, SEEK_END);
         size = ftell(file);
         length = size / sizeof(Product);
-        fseek(file, 0, SEEK_SET);
+        rewind(file);
 
         for(i = 0; i < length; i++)
         {
-            pProduct = (Product*)malloc(sizeof(Product));
+            pProduct = product_new();
             fread(pProduct, sizeof(Product), 1, file);
             al_add(pArrayList, pProduct);
         }
@@ -313,7 +313,6 @@ void product_loadFile(ArrayList *pArrayList, Product *pProduct)
 void product_saveFile(ArrayList *pArrayList, Product *pProduct)
 {
     int i;
-    int size;
     int option;
     FILE *file;
 
@@ -330,9 +329,7 @@ void product_saveFile(ArrayList *pArrayList, Product *pProduct)
         }
         else
         {
-            size = al_len(pArrayList);
-
-            for(i = 0; i < size; i++)
+            for(i = 0; i < al_len(pArrayList); i++)
             {
                 pProduct = al_get(pArrayList, i);
                 fwrite(pProduct, sizeof(Product), 1, file);
@@ -346,6 +343,45 @@ void product_saveFile(ArrayList *pArrayList, Product *pProduct)
     {
         printf("\nCambios sin guardar.\n\n");
         system("pause");
+    }
+
+    fclose(file);
+}
+
+/**
+ * \brief Creates a text file with the information contained
+ * \param ArrayList *pArrayList Pointer to the ArrayList
+ * \param Product *pProduct Pointer to the struct Product
+ * \return void
+ */
+void product_createFile(ArrayList *pArrayList, Product *pProduct)
+{
+    int i;
+    FILE *file;
+
+    file = fopen(PRODUCT_DATA_FILE, "w");
+
+    if(pArrayList != NULL && pProduct != NULL)
+    {
+        if(file != NULL)
+        {
+            fprintf(file, "************ LISTA DE PRODUCTOS ************\n\n");
+            fprintf(file, "DESCRIPCION\t\t\t\tPRECIO\t\tCODIGO\n\n");
+
+            for(i = 0; i < al_len(pArrayList); i++)
+            {
+                pProduct = al_get(pArrayList, i);
+                fprintf(file, "%s\t\t\t%-10.2f\t%d\n", pProduct->description, pProduct->price, pProduct->code);
+            }
+        }
+
+        printf("\nArchivo generado con exito.\n\n");
+        system("pause");
+    }
+    else
+    {
+        printf("ERROR! al crear el archivo %s.\n", PRODUCT_DATA_FILE);
+        exit(0);
     }
 
     fclose(file);

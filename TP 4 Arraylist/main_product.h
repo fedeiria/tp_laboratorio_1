@@ -9,6 +9,7 @@
 #include "ArrayList.h"
 
 #define PRODUCT_DATA "data.bin"
+#define PRODUCT_DATA_FILE "file.txt"
 
 /**
  * \brief Menu that allows you to add a product
@@ -65,5 +66,13 @@ void product_loadFile(ArrayList *pArrayList, Product *pProduct);
  * \return void
  */
 void product_saveFile(ArrayList *pArrayList, Product *pProduct);
+
+/**
+ * \brief Creates a text file with the information contained
+ * \param ArrayList *pArrayList Pointer to the ArrayList
+ * \param Product *pProduct Pointer to the struct Product
+ * \return void
+ */
+void product_createFile(ArrayList *pArrayList, Product *pProduct);
 
 #endif // __MAIN_PRODUCT
