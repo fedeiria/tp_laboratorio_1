@@ -2,4 +2,7 @@
 
 DESCRIPCION				PRECIO		CODIGO
 
+cerveza brahma 970 cm3			34.99     	1
 azucar ledesma 1k			19.99     	2
+yerba playadito 1k			32.99     	5
+aceite marolio 1l			36.75     	10
